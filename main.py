@@ -7,9 +7,7 @@
 # нужно учитывать перемещение по обеим осям
 
 countOfTargets = int(input())
-xIncrease = 0.1
 xCounter = 0
-yIncrease = 0.1
 yCounter = 0
 temp = 0
 xCounterList = []
@@ -22,7 +20,8 @@ for i in range(countOfTargets):
     xCoordinatesOfTargets.append(x)
     yCoordinatesOfTargets.append(y)
 
-for i in range(9):
+
+for i in range(10):
     xCounterList.append(0)
     yCounterList.append(0)
 
@@ -31,29 +30,25 @@ print("yCoordinatesOfTargets", yCoordinatesOfTargets)
 
 for i in range(len(xCounterList)):
     for j in range(countOfTargets):
-        # print(i, "___________________")
-        # print("first :", (abs(xCoordinatesOfTargets[j]) + 0.1 * (i + 1)) // 1, "  and remainder :", (abs(xCoordinatesOfTargets[j]) + 0.1 * (i)) // 1)
-        #print((abs(xCoordinatesOfTargets[j]) + 0.1 * (i + 1)) // 1 > (abs(xCoordinatesOfTargets[j]) + 0.1 * (i)) // 1)
         if (abs(xCoordinatesOfTargets[j]) + 0.1 * (i + 1)) // 1 > (abs(xCoordinatesOfTargets[j]) + 0.1 * (i)) // 1:
             xCounter += 1
             print("xCounter :", xCounter)
-    #print(0.1 * (i + 1))
     xCounterList[i] = int(xCounter)
     xCounter = 0
 print("temp : ", xCounterList.index(max(xCounterList)), "\n", xCounterList)
+
+
 maxX = 1 - (xCounterList.index(max(xCounterList)) + 1) * 0.1
 
 for i in range(len(yCounterList)):
     for j in range(countOfTargets):
-        # print(i, "___________________")
-        # print("first :", (abs(xCoordinatesOfTargets[j]) + 0.1 * (i + 1)) // 1, "  and remainder :", (abs(xCoordinatesOfTargets[j]) + 0.1 * (i)) // 1)
-        #print((abs(xCoordinatesOfTargets[j]) + 0.1 * (i + 1)) // 1 > (abs(xCoordinatesOfTargets[j]) + 0.1 * (i)) // 1)
         if (abs(yCoordinatesOfTargets[j]) + 0.1 * (i + 1)) // 1 > (abs(yCoordinatesOfTargets[j]) + 0.1 * (i)) // 1:
             yCounter += 1
             print("yCounter :", yCounter)
-    #print(0.1 * (i + 1))
     yCounterList[i] = int(yCounter)
     yCounter = 0
+
+
 maxY = 1 - (yCounterList.index(max(yCounterList)) + 1) * 0.1
 print("temp : ", yCounterList.index(max(yCounterList)), "\n", yCounterList)
 xMaxOfCounter = xCounterList.index(max(xCounterList))
