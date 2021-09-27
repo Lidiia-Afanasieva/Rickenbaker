@@ -52,11 +52,6 @@ for i in range(len(yCoordOfTargets)):
     else:
         dictY[delta] = [i]
 
-# print(dictX)
-# print(dictY)
-# indexKeysX = tuple(dictX.keys())
-# indexKeysY = tuple(dictY.keys())
-
 indexKeysX = []
 indexKeysY = []
 
@@ -66,18 +61,12 @@ for i in dictX:
         indexKeysY.append(j)
     indexKeysX.append(i)
 
-# print(indexKeysX)
-# print(indexKeysY)
-
-# print('матрица совпадений (одномер)',matchMatrix)
-
 indexMaxEl = []
 maxEl = max(matchMatrix)
 
 for i in range(len(matchMatrix)):
     if matchMatrix[i] == maxEl:
         indexMaxEl.append(i)
-# print('индексы в матричце совпадений (одномер)',indexMaxEl)
 
 pairsXY = []
 for item in indexMaxEl:
@@ -88,6 +77,5 @@ for item in pairsXY:
     distanceFromOrigin.append(
         round((((indexKeysX[item[1]]) ** 2 + (indexKeysY[item[0]]) ** 2) ** 0.5), precision))  # вспомни, почему наоброт
 
-# print(maxEl, round(min(distanceFromOrigin),5))
 
 print(maxEl, "%.5f" % min(distanceFromOrigin))
