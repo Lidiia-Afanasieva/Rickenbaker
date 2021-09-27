@@ -1,8 +1,3 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-# 1942
 # создать два списка пробить их по циклу к каждому прибавить значение и глянуть по счётчику максимальное
 # нужно учитывать перемещение по обеим осям
 
