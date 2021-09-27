@@ -26,10 +26,6 @@ def lastHope(dictX, dictY):
             indexKeysY.append(j)
         indexKeysX.append(i)
 
-    # print(indexKeysX)
-    # print(indexKeysY)
-
-    # print('матрица совпадений (одномер)',matchMatrix)
 
     indexMaxEl = []
     maxEl = max(matchMatrix)
@@ -37,7 +33,6 @@ def lastHope(dictX, dictY):
     for i in range(len(matchMatrix)):
         if matchMatrix[i] == maxEl:
             indexMaxEl.append(i)
-    # print('индексы в матричце совпадений (одномер)',indexMaxEl)
 
     pairsXY = []
     for item in indexMaxEl:
@@ -49,7 +44,6 @@ def lastHope(dictX, dictY):
             round((((indexKeysX[item[1]]) ** 2 + (indexKeysY[item[0]]) ** 2) ** 0.5),
                   precision))  # вспомни, почему наоброт
 
-    # print(maxEl, round(min(distanceFromOrigin),5))
 
     return (maxEl, min(distanceFromOrigin))
 
@@ -85,7 +79,7 @@ for i in range(countOfTargets):
     xCoordOfTargets.append(X)
     yCoordOfTargets.append(Y)
 #вправо-вверх _ вправо-вниз _ влево-верх _ влево-низ _ к ближайшниу целому
-### first flow in bigger side
+## first flow in bigger side
 
 #вправо-вверх
 for i in range(len(xCoordOfTargets)):
@@ -107,9 +101,7 @@ for i in range(len(yCoordOfTargets)):
     else:
         dictY[delta] = [i]
 lastDeltasArray.append(lastHope(dictX, dictY))
-#(dictX)
 dictX = {}
-#print(dictX)
 dictY = {}
 matchMatrix = []
 
@@ -132,7 +124,6 @@ for i in range(len(yCoordOfTargets)):
         dictY[delta] = listOfRelevantY
     else:
         dictY[delta] = [i]
-#print(dictX, dictY)
 lastDeltasArray.append(lastHope(dictX,dictY))
 
 dictX = {}
